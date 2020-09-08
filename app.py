@@ -87,7 +87,6 @@ def main():
 				df2['class'] = df['class'].replace(1, 'Patient Dies')
 				df2['class'] = df['class'].replace(2, 'Patient Lives')
 				df2['class'].value_counts().plot(kind='pie')
-				st.dataframe(df2)
 				pyplot.ylabel('')
 				st.pyplot()
 
@@ -134,7 +133,7 @@ def main():
 						prediction = loaded_model.predict(single_sample)
 						pred_prob = loaded_model.predict_proba(single_sample)
 					else:
-						loaded_model = load_model("models/logreg_hepB_Model.pkl")
+						loaded_model = load_model("models/LogReg_hepB_Model.pkl")
 						prediction = loaded_model.predict(single_sample)
 						pred_prob = loaded_model.predict_proba(single_sample)
 
